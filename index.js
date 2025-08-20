@@ -7,6 +7,7 @@ const password1 = document.getElementById("password1");
 const successMessage = document.getElementById("success-message");
 
 country.addEventListener("input", checkCountry);
+country.addEventListener("change", checkPostalCode);
 postalCode.addEventListener("input", checkPostalCode);
 mail.addEventListener("input", checkMail);
 password.addEventListener("input", checkPassword);
