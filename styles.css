@@ -39,7 +39,7 @@
 
 span.error-message {
   display: block;
-  height: 7px;
+  min-height: 7px;
   color: #cf1b1b;
   font-size: small;
 }
@@ -51,6 +51,21 @@ input {
   padding: 2px;
 }
 
+select.error,
+input.error {
+  border: 1px solid red;
+}
+
+select.success,
+input.success {
+  border: 1px solid #0be828;
+}
+
+select:focus,
+input:focus {
+  outline: none;
+}
+
 button {
   background-color: #2ec743;
   height: 25px;
@@ -59,4 +74,15 @@ button {
   font-size: 1rem;
   font-weight: 700;
   border-radius: 5px;
+  margin-top: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #0be828;
+}
+
+#form .success-message {
+  display: none;
+  background-color: rgba(255, 255, 255, 0);
 }

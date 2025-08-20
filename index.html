@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="container">
-      <form action="/" id="form">
+      <form action="/" id="form" novalidate>
         <h1>Sign Up</h1>
         <div class="select-control">
           <label for="country">Country</label>
@@ -20,7 +20,7 @@
             <option value="kr">South Korea</option>
             <option value="ind">India</option>
           </select>
-          <span class="error-message"></span>
+          <span class="country-error error-message"></span>
         </div>
         <div class="input-control">
           <label for="postal-code">Postal Code</label>
@@ -30,7 +30,7 @@
             name="postal-code"
             placeholder="CN-1234"
           />
-          <span class="error-message"></span>
+          <span class="postal-code-error error-message"></span>
         </div>
         <div class="input-control">
           <label for="mail">Email</label>
@@ -40,7 +40,7 @@
             name="mail"
             placeholder="hello@example.com"
           />
-          <span class="error-message"></span>
+          <span class="mail-error error-message"></span>
         </div>
         <div class="input-control">
           <label for="password">Password</label>
@@ -50,7 +50,7 @@
             name="password"
             placeholder="xxxxxxxx"
           />
-          <span class="error-message"></span>
+          <span class="password-error error-message"></span>
         </div>
         <div class="input-control">
           <label for="password1">Confirm Password</label>
@@ -60,10 +60,13 @@
             name="password1"
             placeholder="xxxxxxxx"
           />
-          <span class="error-message"></span>
+          <span class="password1-error error-message"></span>
         </div>
         <div class="button-control">
           <button type="submit">Submit</button>
+        </div>
+        <div class="success-message" id="success-message">
+          Form submitted successfully!
         </div>
       </form>
     </div>
