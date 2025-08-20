@@ -44,12 +44,11 @@ function checkCountry() {
 
   if (country.value === "") {
     showError(errorSpan, "Country is required");
-    country.classList.add("error");
+    country.className = "error";
     return false;
   }
   removeError(errorSpan);
-  country.classList.remove("error");
-  country.classList.add("success");
+  country.className = "success";
   return true;
 }
 
@@ -78,15 +77,15 @@ function checkPostalCode() {
 
   // Check if no country is selected first
   if (!selectedCountry) {
-    showError(errorSpan, "Please select a country first");
-    postalCode.classList.add("error");
+    showError(errorSpan, "Please select a country");
+    postalCode.className = "error";
     return false;
   }
 
   // Check if postal code is empty
   if (postalCode.value === "") {
     showError(errorSpan, "Postal code is required");
-    postalCode.classList.add("error");
+    postalCode.className = "error";
     return false;
   }
 
@@ -95,12 +94,12 @@ function checkPostalCode() {
 
   if (constraint.test(postalCode.value)) {
     removeError(errorSpan);
-    postalCode.classList.remove("error");
-    postalCode.classList.add("success");
+    postalCode.className = "success";
+
     return true;
   } else {
     showError(errorSpan, constraints[selectedCountry][1]);
-    postalCode.classList.add("error");
+    postalCode.className = "error";
     return false;
   }
 }
@@ -111,18 +110,17 @@ function checkMail() {
 
   if (mail.value === "") {
     showError(errorSpan, "Email is required");
-    mail.classList.add("error");
+    mail.className = "error";
     return false;
   }
   if (!emailRegex.test(mail.value)) {
     showError(errorSpan, "Please enter a valid email");
-    mail.classList.add("error");
+    mail.className = "error";
     return false;
   }
 
   removeError(errorSpan);
-  mail.classList.remove("error");
-  mail.classList.add("success");
+  mail.className = "success";
   return true;
 }
 
@@ -132,19 +130,18 @@ function checkPassword() {
 
   if (password.value === "") {
     showError(errorSpan, "Password is required");
-    password.classList.add("error");
+    password.className = "error";
     return false;
   }
 
   if (!constraint.test(password.value)) {
     showError(errorSpan, "Password must be between 8 and 20 characters");
-    password.classList.add("error");
+    password.className = "error";
     return false;
   }
 
   removeError(errorSpan);
-  password.classList.remove("error");
-  password.classList.add("success");
+  password.className = "success";
   return true;
 }
 
@@ -153,19 +150,18 @@ function doubleCheckPassword() {
 
   if (password1.value === "") {
     showError(errorSpan, "Please confirm your password");
-    password1.classList.add("error");
+    password1.className = "error";
     return false;
   }
 
   if (password.value !== password1.value) {
     showError(errorSpan, "Passwords don't match");
-    password1.classList.add("error");
+    password1.className = "error";
     return false;
   }
 
   removeError(errorSpan);
-  password1.classList.remove("error");
-  password1.classList.add("success");
+  password1.className = "success";
   return true;
 }
 
